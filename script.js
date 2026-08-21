@@ -118,35 +118,32 @@ const repos = [
 
 const repoGrid = document.getElementById('repoGrid');
 
+const GITHUB_SVG = `<svg viewBox="0 0 16 16" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38
+    0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58
+    1.25.82.73 1.23 1.91.88 2.38.67.07-.53.29-.88.53-1.08-1.85-.21-3.79-.93-3.79-4.13 0-.91.32-1.65.85-2.24-.09-.21-.37-1.06.08-2.2
+    0 0 .69-.22 2.27.84.66-.18 1.36-.28 2.06-.28.7 0 1.4.1 2.06.28 1.58-1.06 2.27-.84 2.27-.84.45 1.14.17 1.99.08 2.2.53.59.85 1.32.85
+    2.24 0 3.21-1.94 3.92-3.8 4.13.3.26.56.76.56 1.54 0 1.11-.01 2-.01 2.27 0 .21.15.46.55.38A8.01 8.01 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>`;
+
 function renderRepos(lang){
   repoGrid.innerHTML = '';
   repos.forEach(r => {
-    const card = document.createElement('div');
+    const card = document.createElement('a');
     card.className = 'repo-card';
+    card.href = r.url.replace(/\.git$/, '');
+    card.target = '_blank';
+    card.rel = 'noopener';
     const color = LANG_COLORS[r.lang] || '#888';
     card.innerHTML = `
-      <p class="repo-name"><span class="icn">⌥</span>${r.name}</p>
+      <div class="repo-top">
+        <p class="repo-name">${r.name}</p>
+        <span class="repo-gh-icon">${GITHUB_SVG}</span>
+      </div>
       <p class="repo-desc">${lang === 'tr' ? r.tr : r.en}</p>
       <div class="repo-meta">
         <span><span class="lang-dot" style="background:${color}"></span>${r.lang}</span>
       </div>
-      <div class="repo-clone">
-        <code>git clone ${r.url}</code>
-        <button class="copy-btn" data-url="${r.url}">${lang === 'tr' ? 'kopyala' : 'copy'}</button>
-      </div>
     `;
     repoGrid.appendChild(card);
-  });
-
-  repoGrid.querySelectorAll('.copy-btn').forEach(btn => {
-    btn.addEventListener('click', () => {
-      const cmd = `git clone ${btn.dataset.url}`;
-      navigator.clipboard.writeText(cmd).then(() => {
-        const original = btn.textContent;
-        btn.textContent = lang === 'tr' ? 'kopyalandı ✓' : 'copied ✓';
-        setTimeout(() => { btn.textContent = original; }, 1600);
-      });
-    });
   });
 }
 

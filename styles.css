@@ -304,32 +304,28 @@ body::before{
   border-radius:var(--radius-m);
   padding:20px;
   display:flex; flex-direction:column; gap:10px;
-  transition:border-color .18s ease, transform .18s ease;
+  transition:border-color .18s ease, transform .18s ease, background .18s ease;
+  cursor:pointer;
 }
-.repo-card:hover{ border-color:var(--accent-dim); transform:translateY(-3px); }
+.repo-card:hover{
+  border-color:var(--accent-dim);
+  transform:translateY(-4px);
+  background:var(--bg-elevated-2);
+}
+.repo-top{ display:flex; align-items:center; justify-content:space-between; gap:10px; }
 .repo-name{
   font-family:var(--font-mono); font-weight:600; font-size:0.95rem;
-  color:var(--text-primary); display:flex; align-items:center; gap:8px;
+  color:var(--text-primary); margin:0;
+  overflow:hidden; text-overflow:ellipsis; white-space:nowrap;
 }
-.repo-name .icn{ color:var(--accent); }
+.repo-gh-icon{
+  color:var(--text-faint); flex-shrink:0; display:flex;
+  transition:color .18s ease, transform .18s ease;
+}
+.repo-card:hover .repo-gh-icon{ color:var(--accent); transform:translate(2px,-2px); }
 .repo-desc{ color:var(--text-muted); font-size:0.88rem; flex-grow:1; margin:0; }
 .repo-meta{ display:flex; align-items:center; gap:14px; font-size:0.76rem; color:var(--text-faint); }
 .lang-dot{ width:8px; height:8px; border-radius:50%; display:inline-block; margin-right:5px; }
-.repo-clone{
-  display:flex; align-items:center; justify-content:space-between; gap:8px;
-  background:var(--bg); border:1px solid var(--border-soft);
-  border-radius:var(--radius-s);
-  padding:8px 10px;
-  font-family:var(--font-mono); font-size:0.72rem; color:var(--text-muted);
-  margin-top:4px;
-}
-.repo-clone code{ overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
-.copy-btn{
-  background:none; border:none; color:var(--text-faint);
-  cursor:pointer; font-size:0.68rem; font-family:var(--font-mono);
-  padding:3px 6px; border-radius:4px; flex-shrink:0;
-}
-.copy-btn:hover{ color:var(--accent); background:var(--bg-elevated-2); }
 .more-repos{ margin-top:32px; text-align:center; }
 
 /* Experience */

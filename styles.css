@@ -29,7 +29,11 @@
 }
 
 *,*::before,*::after{ box-sizing:border-box; }
-html{ scroll-behavior:smooth; }
+html {
+  scroll-behavior: smooth;
+  scroll-snap-type: y mandatory;
+  scroll-padding-top: 68px;
+}
 body{
   margin:0;
   background:var(--bg);
@@ -37,6 +41,7 @@ body{
   font-family:var(--font-body);
   line-height:1.6;
   -webkit-font-smoothing:antialiased;
+  overflow-x: hidden;
 }
 img{ max-width:100%; display:block; }
 a{ color:inherit; text-decoration:none; }
@@ -120,7 +125,18 @@ body::before{
 /* =========================================================
    Hero
    ========================================================= */
-.hero{ position:relative; z-index:1; padding:96px 24px 72px; overflow:hidden; }
+.hero {
+  position: relative;
+  z-index: 1;
+  min-height: calc(100vh - 68px);
+  padding: 40px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  box-sizing: border-box;
+  scroll-snap-align: start;
+}
 .hero::before{
   content:"";
   position:absolute; top:-10%; left:50%; transform:translateX(-50%);
@@ -297,12 +313,22 @@ body::before{
 /* =========================================================
    Sections
    ========================================================= */
-.section{
-  position:relative; z-index:1;
-  max-width:var(--maxw); margin:0 auto;
-  padding:80px 24px;
+.section {
+  position: relative;
+  z-index: 1;
+  max-width: var(--maxw);
+  margin: 0 auto;
+  min-height: calc(100vh - 68px);
+  padding: 60px 24px;
+  box-sizing: border-box;
+  scroll-snap-align: start;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
-.section-alt{ background:var(--bg-elevated); max-width:none; }
+.section-alt {
+  background: var(--bg-elevated); max-width: none; width: 100%; }
 .section-alt > *{ max-width:var(--maxw); margin-left:auto; margin-right:auto; }
 .section-alt{ padding-left:0; padding-right:0; }
 .section-alt .section-eyebrow, .section-alt .section-title,

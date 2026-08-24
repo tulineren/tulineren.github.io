@@ -81,8 +81,8 @@ const repos = [
   url: "https://github.com/tulineren/Hacker_News_Technology_Earthquakes_Analysis.git"
   },
   {
-  nameTr: "Turkcell IoT SIM Filosu Koruyucu - Anomali Tespiti ve Maliyet Simülatörü",
-  nameEn: "Turkcell IoT SIM Fleet Protection - Anomaly Detection & Cost Simulator",
+  nameTr: "Turkcell IoT SIM Filosu Koruyucu",
+  nameEn: "Turkcell IoT SIM Fleet Protector",
   lang: "Python",
   tr: "IoT SIM kartlarının veri kullanımını analiz ederek anormal kullanımları tespit eden ve maliyet simülasyonu yapan Python tabanlı uygulama.",
   en: "A Python-based application that analyzes IoT SIM data usage, detects anomalies, and simulates potential costs.",

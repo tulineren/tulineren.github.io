@@ -97,7 +97,7 @@ const repos = [
   private: true
   },
   {
-  nameTr: "Campaign Optimizer App",
+  nameTr: "Kampanya Optimizasyon Uygulaması",
   nameEn: "Campaign Optimizer App",
   lang: "Python",
   tr: "Gerçek bir şirketten sağlanan reklam kampanyası verilerini label ve KPI hedeflerine göre analiz ederek günlük bütçe ve hedef CPA değerlerini hesaplayan uygulama. Python, Pandas, Gradio ve OpenPyXL kullanıldı.",

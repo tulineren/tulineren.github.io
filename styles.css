@@ -483,9 +483,12 @@ body::before{
 }
 .repo-top{ display:flex; align-items:center; justify-content:space-between; gap:10px; }
 .repo-name{
-  font-family:var(--font-mono); font-weight:600; font-size:0.95rem;
-  color:var(--text-primary); margin:0;
-  overflow:hidden; text-overflow:ellipsis; white-space:nowrap;
+  font-family:var(--font-mono);
+  font-weight:600;
+  font-size:0.95rem;
+  color:var(--text-primary);
+  margin:0;
+  overflow-wrap:anywhere;
 }
 .repo-gh-icon{
   color:var(--text-faint); flex-shrink:0; display:flex;

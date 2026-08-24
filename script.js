@@ -113,7 +113,7 @@ const repos = [
   url: "https://github.com/tulineren/pyqt-task-reminder-app.git"
   },
   {
-  nameTr: "10. Işık Yılı",
+  nameTr: "10th Lightyear",
   nameEn: "10th Lightyear",
   lang: "C#",
   tr: "3 kişilik ekip ile Unity kullanılarak geliştirilen 3D Action-RPG / Hack and Slash oyunu. UI geliştiricisi olarak responsive arayüz, menü etkileşimleri, TextMeshPro ve sahne geçişlerini geliştirdim.",

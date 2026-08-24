@@ -367,7 +367,7 @@ body::before{
   max-width: var(--maxw);
   margin: 0 auto;
   padding: 0;
-  transform: translateY(-20px);
+  transform: translateY(-15px);
 }
 
 #skills .skill-card {

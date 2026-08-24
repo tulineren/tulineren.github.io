@@ -348,33 +348,25 @@ body::before{
 .section-alt .skills-grid,
 .section-alt .exp-card,
 .section-alt .comp-grid {
-  padding-left: 24px;
-  padding-right: 24px;
+  padding-left: 0;
+  padding-right: 0;
 }
 
 /* Skills section alignment */
 
-#skills .section-eyebrow,
 #skills .section-title {
   width: 100%;
   max-width: var(--maxw);
   text-align: left;
-  padding-left: 24px;
-  padding-right: 24px;
-  box-sizing: border-box;
-}
-
-#skills .section-title {
-  margin-bottom: 100px;
+  margin: 0 auto 100px;
+  padding: 0;
 }
 
 #skills .skills-grid {
   width: 100%;
   max-width: var(--maxw);
   margin: 0 auto;
-  padding-left: 24px;
-  padding-right: 24px;
-  box-sizing: border-box;
+  padding: 0;
 }
 
 #skills .skill-card {

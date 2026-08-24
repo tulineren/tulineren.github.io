@@ -595,3 +595,10 @@ body::before{
     padding:16px;
   }
 }
+
+.repo-private {
+  color: var(--text-faint);
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  white-space: nowrap;
+}

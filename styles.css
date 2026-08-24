@@ -399,55 +399,51 @@ body::before{
 .mini-card p{ margin:2px 0; font-size:0.92rem; }
 
 /* Skills */
-.skills-grid{
-  display:grid;
-  grid-template-columns:repeat(4, minmax(0, 1fr));
-  gap:18px;
-  width:100%;
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px;
+  width: 100%;
 }
 
-.skill-card{
-  background:var(--bg);
-  border:1px solid var(--border-soft);
-  border-radius:var(--radius-m);
-  padding:20px;
-  min-width:0;
+.skill-card {
+  background: var(--bg);
+  border: 1px solid var(--border-soft);
+  border-radius: var(--radius-m);
+  padding: 20px;
+  min-width: 0;
 }
 
-.skill-cat{
-  color:var(--text-primary);
-  font-size:0.82rem;
-  margin:0 0 14px;
+.skill-cat {
+  color: var(--text-primary);
+  font-size: 0.82rem;
+  margin: 0 0 14px;
 }
 
-.chips{
-  display:flex;
-  flex-wrap:wrap;
-  gap:8px;
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
 }
 
-.chip{
-  font-family:var(--font-mono);
-  font-size:0.76rem;
-  background:var(--bg-elevated-2);
-  color:var(--text-muted);
-  border:1px solid var(--border-soft);
-  padding:6px 10px;
-  border-radius:6px;
-}
-.skill-card{
-  background:var(--bg); border:1px solid var(--border-soft);
-  border-radius:var(--radius-m); padding:20px;
-}
-.skill-cat{ color:var(--text-primary); font-size:0.82rem; margin:0 0 14px; }
-.chips{ display:flex; flex-wrap:wrap; gap:8px; }
-.chip{
-  font-family:var(--font-mono); font-size:0.76rem;
-  background:var(--bg-elevated-2); color:var(--text-muted);
-  border:1px solid var(--border-soft);
-  padding:6px 10px; border-radius:6px;
+.chip {
+  font-family: var(--font-mono);
+  font-size: 0.76rem;
+  background: var(--bg-elevated-2);
+  color: var(--text-muted);
+  border: 1px solid var(--border-soft);
+  padding: 6px 10px;
+  border-radius: 6px;
 }
 
+#skills .section-title {
+  text-align: left;
+  margin-bottom: 28px;
+}
+
+#skills .skills-grid {
+  margin-top: 0;
+}
 /* Projects */
 .repo-grid{
   display:grid; grid-template-columns:repeat(auto-fit, minmax(300px,1fr));

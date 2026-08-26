@@ -320,7 +320,7 @@ body::before{
   max-width: var(--maxw);
   margin: 0 auto;
   min-height: calc(100vh - 68px);
-  padding: 60px 24px;
+  padding: 60px 24px 100px;
   box-sizing: border-box;
   scroll-snap-align: start;
   display: flex;
@@ -391,37 +391,140 @@ body::before{
   max-width: 60ch;
   margin: 0 0 40px;
 }
-/* About */
-.about-grid{
-  display:grid; grid-template-columns:1.3fr 1fr; gap:48px;
-  margin-bottom:36px;
-}
-.about-text{ color:var(--text-muted); font-size:1rem; }
 
-.timeline{ border-left:1px solid var(--border); padding-left:24px; }
-.timeline-item{ position:relative; margin-bottom:26px; display:flex; gap:14px; }
-.timeline-item:last-child{ margin-bottom:0; }
-.timeline-dot{
-  position:absolute; left:-29px; top:5px;
-  width:9px; height:9px; border-radius:50%;
-  background:var(--accent);
-  box-shadow:0 0 0 4px var(--bg);
+.section-alt .section-title {
+  margin-left: auto;
+  margin-right: auto;
 }
-.timeline-date{ color:var(--accent-2); font-size:0.78rem; margin-bottom:2px; }
-.timeline-title{ font-weight:600; margin:0; }
-.timeline-sub{ color:var(--text-muted); margin:2px 0 0; font-size:0.92rem; }
-
-.lang-cards{ display:flex; gap:16px; flex-wrap:wrap; }
-.mini-card{
-  background:var(--bg-elevated);
-  border:1px solid var(--border-soft);
-  border-radius:var(--radius-m);
-  padding:16px 20px;
-  min-width:180px;
+.comp-title {
+  font-size: 1.15rem;
+  font-weight: 600;
+  margin: 36px auto 18px;
+  text-align: center;
+  width: 100%;
+  max-width: var(--maxw);
 }
-.mini-card-label{ color:var(--accent); font-size:0.72rem; margin:0 0 8px; }
-.mini-card p{ margin:2px 0; font-size:0.92rem; }
+/* =========================================================
+   About
+   ========================================================= */
 
+.about-grid {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 56px;
+  margin-bottom: 42px;
+  align-items: start;
+}
+
+.about-text {
+  color: var(--text-muted);
+  font-size: 1.08rem;
+  line-height: 1.85;
+  max-width: 700px;
+}
+
+/* Education timeline */
+
+.timeline {
+  border-left: 1px solid var(--border);
+  padding-left: 28px;
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 32px;
+  display: flex;
+  gap: 14px;
+}
+
+.timeline-item:last-child {
+  margin-bottom: 0;
+}
+
+.timeline-dot {
+  position: absolute;
+  left: -33px;
+  top: 7px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 0 4px var(--bg);
+}
+
+.timeline-date {
+  color: var(--accent-2);
+  font-size: 0.82rem;
+  margin-bottom: 5px;
+}
+
+.timeline-title {
+  font-weight: 600;
+  font-size: 1.05rem;
+  margin: 0;
+}
+
+.timeline-sub {
+  color: var(--text-muted);
+  margin: 4px 0 0;
+  font-size: 0.98rem;
+}
+
+/* Languages & Certificates */
+
+.lang-cards {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 56px;
+  align-items: start;
+}
+
+.mini-card {
+  background: var(--bg-elevated);
+  border: 1px solid var(--border-soft);
+  border-radius: var(--radius-m);
+  padding: 22px 26px;
+  min-width: 0;
+}
+
+.mini-card p {
+  margin: 8px 0;
+  font-size: 0.96rem;
+}
+
+.certificates-card { min-width: 0; }
+.certificates-card .certificate-item p { line-height: 1.5; }
+
+/* Certificate rows: name left, date right */
+
+.certificate-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 14px;
+  padding: 8px 0;
+  border-bottom: 1px solid var(--border-soft);
+}
+
+.certificate-item:last-child {
+  border-bottom: none;
+}
+
+.certificate-item p {
+  margin: 0;
+  font-size: 0.96rem;
+}
+
+.certificate-date {
+  color: var(--accent-2);
+  font-size: 0.82rem;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+#about {
+  padding-bottom: 10vh;
+}
 /* =========================================================
    Skills
    ========================================================= */
@@ -501,12 +604,15 @@ body::before{
 .more-repos{ margin-top:32px; text-align:center; }
 
 /* Experience */
-.exp-card{
-  background:var(--bg);
-  border:1px solid var(--border-soft);
-  border-radius:var(--radius-m);
-  padding:26px 28px;
-  margin-bottom:24px;
+.exp-card {
+  background: var(--bg);
+  border: 1px solid var(--border-soft);
+  border-radius: var(--radius-m);
+  padding: 26px 28px;
+  margin-bottom: 24px;
+  width: 100%;
+  align-self: stretch;
+  box-sizing: border-box;
 }
 .exp-head{ display:flex; justify-content:space-between; gap:16px; flex-wrap:wrap; margin-bottom:14px; }
 .exp-role{ font-weight:600; font-size:1.05rem; margin:0 0 4px; }
@@ -567,12 +673,12 @@ body::before{
 .contact-info .section-title{
   margin-top:8px;
   margin-bottom:20px;
-  font-size:clamp(2.8rem, 5vw, 4.5rem);
-  line-height:0.95;
-  letter-spacing:-0.035em;
-  font-weight:700;
+  font-family:'Chakra Petch', sans-serif;
+  font-size:3rem;
+  font-weight:500;
+  line-height:1.05;
+  letter-spacing:-0.02em;
 }
-
 .contact-info .section-lead{
   margin-bottom:28px;
   max-width:420px;

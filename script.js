@@ -1,4 +1,42 @@
 // =========================================================
+// Theme toggle (dark / light) — preference kept in localStorage
+// =========================================================
+const themeToggle = document.getElementById('themeToggle');
+const rootEl = document.documentElement;
+const savedTheme = (() => {
+  try { return localStorage.getItem('theme'); } catch(e) { return null; }
+})();
+const prefersLight = window.matchMedia('(prefers-color-scheme: light)').matches;
+
+if (savedTheme === 'light' || (!savedTheme && prefersLight)) {
+  rootEl.setAttribute('data-theme', 'light');
+}
+
+themeToggle.addEventListener('click', () => {
+  const isLight = rootEl.getAttribute('data-theme') === 'light';
+  if (isLight) {
+    rootEl.removeAttribute('data-theme');
+    try { localStorage.setItem('theme', 'dark'); } catch(e) {}
+  } else {
+    rootEl.setAttribute('data-theme', 'light');
+    try { localStorage.setItem('theme', 'light'); } catch(e) {}
+  }
+});
+
+(function () {
+  const el = document.getElementById('heroNameLetters');
+  const text = 'TÜLİN EREN';
+  el.innerHTML = '';
+  [...text].forEach((char, i) => {
+    const span = document.createElement('span');
+    span.className = 'anim-letter';
+    span.style.animationDelay = (0.18 + i * 0.045) + 's';
+    span.textContent = char === ' ' ? '\u00A0' : char;
+    el.appendChild(span);
+  });
+})();
+
+// =========================================================
 // Language toggle (TR / EN) — preference kept in memory + localStorage
 // =========================================================
 const translatable = document.querySelectorAll('[data-tr]');

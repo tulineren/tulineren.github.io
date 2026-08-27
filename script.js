@@ -79,7 +79,10 @@ function runTerminal(lang){
   terminalTimeouts = [];
 
   const line1 = document.getElementById('typeLine1');
-  const line2 = document.getElementById('typeLine2');
+  const line2 = document.getElementById('typeLine2'); 
+  
+  if (!line1 || !line2) return;
+
   const texts = lang === 'tr'
     ? ["Tülin Eren", "Bilgisayar Mühendisliği Öğrencisi — 4. sınıf"]
     : ["Tülin Eren", "Computer Engineering Student — 4th year"];

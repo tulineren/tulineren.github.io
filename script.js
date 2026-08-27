@@ -1,27 +1,44 @@
 // =========================================================
-// Theme toggle (dark / light) — preference kept in localStorage
+// Theme toggle — dark / light
 // =========================================================
+
 const themeToggle = document.getElementById('themeToggle');
 const rootEl = document.documentElement;
-const savedTheme = (() => {
-  try { return localStorage.getItem('theme'); } catch(e) { return null; }
-})();
-const prefersLight = window.matchMedia('(prefers-color-scheme: light)').matches;
 
-if (savedTheme === 'light' || (!savedTheme && prefersLight)) {
-  rootEl.setAttribute('data-theme', 'light');
+function applyTheme(theme) {
+  rootEl.classList.toggle('dark', theme === 'dark');
+
+  try {
+    localStorage.setItem('theme', theme);
+  } catch (e) {}
 }
 
-themeToggle.addEventListener('click', () => {
-  const isLight = rootEl.getAttribute('data-theme') === 'light';
-  if (isLight) {
-    rootEl.removeAttribute('data-theme');
-    try { localStorage.setItem('theme', 'dark'); } catch(e) {}
-  } else {
-    rootEl.setAttribute('data-theme', 'light');
-    try { localStorage.setItem('theme', 'light'); } catch(e) {}
+const savedTheme = (() => {
+  try {
+    return localStorage.getItem('theme');
+  } catch (e) {
+    return null;
   }
-});
+})();
+
+const prefersDark = window.matchMedia(
+  '(prefers-color-scheme: dark)'
+).matches;
+
+const initialTheme =
+  savedTheme === 'dark' || (!savedTheme && prefersDark)
+    ? 'dark'
+    : 'light';
+
+applyTheme(initialTheme);
+
+if (themeToggle) {
+  themeToggle.addEventListener('click', () => {
+    const isDark = rootEl.classList.contains('dark');
+
+    applyTheme(isDark ? 'light' : 'dark');
+  });
+}
 
 (function () {
   const el = document.getElementById('heroNameLetters');
@@ -29,7 +46,7 @@ themeToggle.addEventListener('click', () => {
   el.innerHTML = '';
   [...text].forEach((char, i) => {
     const span = document.createElement('span');
-    span.className = 'anim-letter';
+    span.className = char === ' ' ? 'anim-letter anim-space' : 'anim-letter';
     span.style.animationDelay = (0.18 + i * 0.045) + 's';
     span.textContent = char === ' ' ? '\u00A0' : char;
     el.appendChild(span);

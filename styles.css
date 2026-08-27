@@ -26,7 +26,7 @@
   --font-mono:    'JetBrains Mono', monospace;
 
   --maxw: 1120px;
-
+}
   /* Açık mod */
 [data-theme="light"]{
   --bg:            #F7F8FA;
@@ -45,14 +45,29 @@
   --accent-3:      #6B5FB3;
 }
 
-[data-theme="light"] body::before{
+
+
+html[data-theme="light"] body::before {
   background-image:
-    radial-gradient(circle at 15% 10%, rgba(15,110,86,0.06), transparent 45%),
-    radial-gradient(circle at 85% 0%, rgba(107,95,179,0.05), transparent 40%);
+    radial-gradient(
+      circle at 15% 10%,
+      rgba(15,110,86,0.06),
+      transparent 45%
+    ),
+    radial-gradient(
+      circle at 85% 0%,
+      rgba(107,95,179,0.05),
+      transparent 40%
+    );
+}
+
+html[data-theme="light"] ::selection {
+  background: var(--accent);
+  color: #fff;
 }
 
 [data-theme="light"] ::selection{ background:var(--accent); color:#fff; }
-}
+
 
 *,*::before,*::after{ box-sizing:border-box; }
 html {
@@ -91,11 +106,19 @@ body::before{
 /* =========================================================
    Topbar
    ========================================================= */
-.topbar{
-  position:sticky; top:0; z-index:50;
-  background:rgba(11,14,20,0.82);
-  backdrop-filter:blur(10px);
-  border-bottom:1px solid var(--border-soft);
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+
+  background: color-mix(
+    in srgb,
+    var(--bg) 82%,
+    transparent
+  );
+
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border-soft);
 }
 .topbar-inner{
   max-width:var(--maxw);
@@ -198,7 +221,7 @@ body::before{
   background-size:56px 56px;
   animation:grid-pan 7s linear infinite;
 }
-[data-theme="light"] .hero-bg-grid{
+html[data-theme="light"] .hero-bg-grid{
   background-image:
     linear-gradient(to right, rgba(26,29,35,0.05) 1px, transparent 1px),
     linear-gradient(to bottom, rgba(26,29,35,0.05) 1px, transparent 1px);
@@ -221,6 +244,15 @@ body::before{
   border-top-color:rgba(79,209,197,0.4);
   animation:ring-spin 34s linear infinite;
 }
+html[data-theme="light"] .hero::before {
+  background:
+    radial-gradient(
+      circle,
+      rgba(15,110,86,0.07) 0%,
+      rgba(107,95,179,0.035) 45%,
+      transparent 70%
+    );
+}
 .hero-ring::after{
   content:"";
   position:absolute; inset:12%;
@@ -233,7 +265,15 @@ body::before{
   from{ transform:rotate(0deg); }
   to{ transform:rotate(360deg); }
 }
+html[data-theme="light"] .hero-ring::before {
+  border-color: rgba(15,110,86,0.13);
+  border-top-color: rgba(15,110,86,0.32);
+}
 
+html[data-theme="light"] .hero-ring::after {
+  border-color: rgba(107,95,179,0.14);
+  border-left-color: rgba(107,95,179,0.3);
+}
 .hero-glow-1{
   position:absolute; left:50%; top:-18%;
   width:42rem; height:42rem;
@@ -360,6 +400,10 @@ body::before{
   display:inline-block;
   opacity:0;
   animation:letter-in 0.7s cubic-bezier(0.22,1,0.36,1) forwards;
+}
+.anim-space{
+  display:inline-block;
+  width:0.35em;
 }
 @keyframes letter-in{
   0%{ opacity:0; transform:translateY(0.5em) rotate(6deg); }

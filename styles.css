@@ -112,7 +112,8 @@ body::before{
   z-index: 50;
   background: color-mix(in srgb, var(--bg) 10%, transparent);
   backdrop-filter: blur(6px);
-  border-bottom: none;
+  border-bottom: none !important;
+  box-shadow: none !important;
 }
 .topbar-inner{
   width:100%;
@@ -218,6 +219,8 @@ body::before{
   isolation: isolate;
   box-sizing: border-box;
   scroll-snap-align: start;
+
+  border-top: none !important;
 }
 
 .hero-bg{

@@ -794,7 +794,16 @@ html[data-theme="light"] .hero-ring::after {
 .about-section{
   position:relative;
   overflow:hidden;
-  isolation:isolate;
+  background-image:
+    linear-gradient(to right, rgba(231,234,242,.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(231,234,242,.05) 1px, transparent 1px);
+  background-size:56px 56px;
+}
+
+html[data-theme="light"] .about-section{
+  background-image:
+    linear-gradient(to right, rgba(26,29,35,.045) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(26,29,35,.045) 1px, transparent 1px);
 }
 
 .about-section::before{

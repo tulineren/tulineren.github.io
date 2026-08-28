@@ -250,7 +250,7 @@ html[data-theme="light"] .hero-bg-grid{
 
 .hero-ring{
   position:absolute; left:50%; top:50%;
-  width:60rem; height:60rem;
+  width:54rem; height:54rem;
   max-width:90vw; max-height:90vw;
   transform:translate(-50%,-50%);
 }

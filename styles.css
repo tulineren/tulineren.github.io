@@ -126,6 +126,7 @@ body::before{
   padding:14px 24px;
   display:flex; align-items:center; justify-content:space-between;
   gap:16px;
+  flex-wrap:nowrap;
 }
 .brand{
   font-family:var(--font-display);
@@ -156,6 +157,8 @@ body::before{
 
 .topbar-actions{ display:flex; align-items:center; gap:12px; }
 .lang-toggle{
+  height:36px;
+  box-sizing:border-box;
   font-family:var(--font-mono);
   font-size:0.78rem;
   background:var(--bg-elevated);
@@ -166,6 +169,7 @@ body::before{
   cursor:pointer;
   display:flex; align-items:center; gap:6px;
 }
+
 .lang-opt{ padding:1px 3px; border-radius:4px; }
 .lang-opt.is-active{ color:var(--bg); background:var(--accent); font-weight:600; }
 .lang-divider{ color:var(--text-faint); }
@@ -200,6 +204,7 @@ body::before{
   align-items: center;
   justify-content: center;
   overflow: hidden;
+  isolation: isolate;
   box-sizing: border-box;
   scroll-snap-align: start;
 }
@@ -240,7 +245,8 @@ html[data-theme="light"] .hero-bg-grid{
 
 .hero-ring{
   position:absolute; left:50%; top:50%;
-  width:38rem; height:38rem;
+  width:30rem; height:30rem;
+  max-width:80vw; max-height:80vw;
   transform:translate(-50%,-50%);
 }
 .hero-ring::before{

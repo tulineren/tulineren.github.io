@@ -110,7 +110,7 @@ body::before{
   position: sticky;
   top: 0;
   z-index: 50;
-  background: color-mix(in srgb, var(--bg) 40%, transparent);
+  background: color-mix(in srgb, var(--bg) 10%, transparent);
   backdrop-filter: blur(6px);
   border-bottom: none;
 }
@@ -183,9 +183,9 @@ body::before{
 }
 .theme-toggle:hover{ color:var(--accent); border-color:var(--accent); }
 .theme-toggle svg{ width:16px; height:16px; }
-.theme-toggle .icon-moon{ display:none; }
-[data-theme="light"] .theme-toggle .icon-sun{ display:none; }
-[data-theme="light"] .theme-toggle .icon-moon{ display:block; }
+.theme-toggle .icon-sun{ display:none; }
+[data-theme="light"] .theme-toggle .icon-moon{ display:none; }
+[data-theme="light"] .theme-toggle .icon-sun{ display:block; }
 
 .menu-btn{ display:none; }
 

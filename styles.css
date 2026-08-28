@@ -138,23 +138,19 @@ body::before{
 .brand-name{ color:var(--text-primary); }
 
 .tabs{
-  display:flex; gap:4px;
-  background:var(--bg-elevated);
-  border:1px solid var(--border-soft);
-  border-radius:999px;
-  padding:4px;
+  display:flex;
+  align-items:center;
+  gap:28px;
 }
 .tab{
   font-family:var(--font-mono);
   font-size:0.82rem;
   color:var(--text-muted);
-  padding:8px 14px;
-  border-radius:999px;
-  transition:all .18s ease;
+  padding:0;
+  transition:color .18s ease;
   white-space:nowrap;
 }
-.tab:hover{ color:var(--text-primary); background:var(--bg-elevated-2); }
-
+.tab:hover{ color:var(--text-primary); background:none; }
 .topbar-actions{ display:flex; align-items:center; gap:12px; }
 .lang-toggle{
   height:36px;

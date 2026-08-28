@@ -115,16 +115,10 @@ body::before{
   border-bottom: none;
 }
 .topbar-inner{
-  width:100%;
-  max-width:none;
-  margin:0;
-  padding:14px 48px;
-  box-sizing:border-box;
-
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-
+  max-width:var(--maxw);
+  margin:0 auto;
+  padding:14px 24px;
+  display:flex; align-items:center; justify-content:flex-end;
   gap:16px;
   flex-wrap:nowrap;
 }
@@ -256,7 +250,7 @@ html[data-theme="light"] .hero-bg-grid{
 
 .hero-ring{
   position:absolute; left:50%; top:50%;
-  width:44rem; height:44rem;
+  width:60rem; height:60rem;
   max-width:90vw; max-height:90vw;
   transform:translate(-50%,-50%);
 }

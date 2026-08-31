@@ -72,7 +72,6 @@ html[data-theme="light"] ::selection {
 *,*::before,*::after{ box-sizing:border-box; }
 html {
   scroll-behavior: smooth;
-  scroll-snap-type: y mandatory;
   scroll-padding-top: 68px;
 }
 body{

@@ -266,8 +266,8 @@ html[data-theme="light"] .hero-bg-grid{
 
 .hero-ring{
   position:absolute; left:50%; top:50%;
-  width:54rem; height:54rem;
-  max-width:90vw; max-height:90vw;
+  width:46rem; height:46rem;
+  max-width:78vw; max-height:78vw;
   transform:translate(-50%,-50%);
 }
 .hero-ring::before{
@@ -1430,9 +1430,9 @@ a.contact-value:hover{
   width: 100%;
   white-space: nowrap;
   font-family: var(--font-display);
-  font-size: clamp(4.5rem, 9.2vw, 9rem);
+  font-size: clamp(4rem, 7.1vw, 7rem);
   font-weight: 800;
-  letter-spacing: .17em;
+  letter-spacing: .13em;
   line-height: 1;
 }
 .hero-role {
@@ -1453,7 +1453,7 @@ a.contact-value:hover{
 
 @media (max-width: 480px){
   .hero{ padding-left:16px; padding-right:16px; }
-  .hero-title-centered{ font-size:clamp(2.15rem, 14vw, 3.6rem); letter-spacing:.08em; white-space:nowrap; }
+  .hero-title-centered{ font-size:clamp(2.05rem, 12.5vw, 3.2rem); letter-spacing:.055em; white-space:nowrap; }
   .hero-role{ font-size:.73rem; letter-spacing:.12em; }
   .hero-desc-centered{ font-size:.95rem; max-width:34ch; }
   .hero-interests-line{ font-size:.7rem; }

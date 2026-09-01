@@ -47,7 +47,7 @@ if (themeToggle) {
   el.innerHTML = '';
   [...text].forEach((char, i) => {
     const span = document.createElement('span');
-    span.className = char === ' ' ? 'anim-space' : '';
+    span.className = char === ' ' ? 'anim-space' : 'anim-letter';
     span.style.animationDelay = (0.18 + i * 0.045) + 's';
     span.textContent = char === ' ' ? '\u00A0' : char;
     el.appendChild(span);
@@ -158,7 +158,9 @@ langToggle.addEventListener('click', () => {
     });
     ctx.globalAlpha = 1;
 
-    animId = requestAnimationFrame(draw);
+    if (performance.now() < 3200) {
+      animId = requestAnimationFrame(draw);
+    }
   }
 
   function start() {

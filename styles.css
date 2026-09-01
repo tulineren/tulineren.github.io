@@ -1414,9 +1414,46 @@ a.contact-value:hover{
   .hero-open-badge{ margin-bottom:12px; }
 }
 
+/* Background motion runs once on entry, then rests. */
+.hero-bg-grid,
+.hero-ring::before,
+.hero-ring::after,
+.hero-glow-1,
+.hero-glow-2,
+.hero-sweep {
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+/* Reference-aligned hero scale */
+.hero-title-centered {
+  width: 100%;
+  white-space: nowrap;
+  font-family: var(--font-display);
+  font-size: clamp(4.5rem, 9.2vw, 9rem);
+  font-weight: 800;
+  letter-spacing: .17em;
+  line-height: 1;
+}
+.hero-role {
+  font-family: var(--font-mono);
+  font-size: .9rem;
+  letter-spacing: .24em;
+}
+.hero-desc-centered {
+  font-family: var(--font-body);
+  font-size: clamp(1.15rem, 2vw, 1.5rem);
+  line-height: 1.65;
+}
+.hero-interests-line {
+  font-family: var(--font-mono);
+  font-size: .88rem;
+  letter-spacing: .03em;
+}
+
 @media (max-width: 480px){
   .hero{ padding-left:16px; padding-right:16px; }
-  .hero-title-centered{ font-size:clamp(2.15rem, 14vw, 3.6rem); letter-spacing:.08em; }
+  .hero-title-centered{ font-size:clamp(2.15rem, 14vw, 3.6rem); letter-spacing:.08em; white-space:nowrap; }
   .hero-role{ font-size:.73rem; letter-spacing:.12em; }
   .hero-desc-centered{ font-size:.95rem; max-width:34ch; }
   .hero-interests-line{ font-size:.7rem; }

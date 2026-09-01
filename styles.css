@@ -108,11 +108,18 @@ body::before{
 .topbar {
   position: sticky;
   top: 0;
-  z-index: 50;
-  background: color-mix(in srgb, var(--bg) 10%, transparent);
-  backdrop-filter: blur(6px);
-  border-bottom: none !important;
-  box-shadow: none !important;
+  z-index: 100;
+  background: color-mix(in srgb, var(--bg) 78%, transparent);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid color-mix(in srgb, var(--border) 42%, transparent);
+  box-shadow: 0 8px 24px -20px rgba(0,0,0,.35);
+}
+
+/* Navbar ve bölümler aynı kesintisiz yüzeyi paylaşır. */
+main,
+.hero,
+.section {
+  background: var(--bg);
 }
 .topbar-inner{
   width:100%;
@@ -220,6 +227,7 @@ body::before{
   scroll-snap-align: start;
 
   border-top: none !important;
+  background: var(--bg);
 }
 
 .hero-bg{

@@ -47,7 +47,7 @@ if (themeToggle) {
   el.innerHTML = '';
   [...text].forEach((char, i) => {
     const span = document.createElement('span');
-    span.className = char === ' ' ? 'anim-letter anim-space' : 'anim-letter';
+    span.className = char === ' ' ? 'anim-space' : '';
     span.style.animationDelay = (0.18 + i * 0.045) + 's';
     span.textContent = char === ' ' ? '\u00A0' : char;
     el.appendChild(span);

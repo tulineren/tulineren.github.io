@@ -292,13 +292,12 @@ html[data-theme="light"] .hero::before {
   to{ transform:rotate(360deg); }
 }
 html[data-theme="light"] .hero-ring::before {
-  border-color: rgba(15,110,86,0.13);
-  border-top-color: rgba(15,110,86,0.32);
+  border-color: rgba(15,110,86,0.08);
+  border-top-color: rgba(15,110,86,0.22);
 }
-
 html[data-theme="light"] .hero-ring::after {
-  border-color: rgba(107,95,179,0.14);
-  border-left-color: rgba(107,95,179,0.3);
+  border-color: rgba(107,95,179,0.09);
+  border-left-color: rgba(107,95,179,0.2);
 }
 .hero-glow-1{
   position:absolute; left:50%; top:-18%;

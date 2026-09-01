@@ -136,11 +136,11 @@ langToggle.addEventListener('click', () => {
         const dx = a.x - b.x;
         const dy = a.y - b.y;
         const dist = Math.sqrt(dx * dx + dy * dy);
-        const maxDist = 160;
+        const maxDist = 120;
         if (dist < maxDist) {
           ctx.strokeStyle = accent;
-          ctx.globalAlpha = (1 - dist / maxDist) * 0.25;
-          ctx.lineWidth = 0.6;
+          ctx.globalAlpha = (1 - dist / maxDist) * 0.15;
+          ctx.lineWidth = 0.5;
           ctx.beginPath();
           ctx.moveTo(a.x, a.y);
           ctx.lineTo(b.x, b.y);

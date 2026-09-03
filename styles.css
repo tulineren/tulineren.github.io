@@ -1415,3 +1415,72 @@ a.contact-value:hover{
   .hero-interests-line .sep{ margin:0 4px; }
 }
 
+@media (max-width: 860px){
+  .about-grid,
+  .lang-cards{
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .section{
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+@media (max-width: 860px){
+  .section,
+  .section-alt{
+    padding-left: 20px;
+    padding-right: 20px;
+    box-sizing: border-box;
+  }
+
+  .comp-grid{
+    grid-template-columns: 1fr;
+  }
+  
+  .exp-head{
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }  
+
+  .exp-head{
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+}
+
+@media (max-width: 860px){
+  .section-alt .exp-card{
+    padding-left: 10px !important;
+  }
+}
+
+@media (max-width: 700px){
+
+  .footer{
+    text-align: center;
+  }
+
+  .footer p{
+    font-size: 0.80rem;
+  }
+}
+
+@media (max-width: 700px){
+  .contact-layout{
+    gap: 0px;  
+  }
+  .contact-info{
+    display: contents;
+  }
+
+  .contact-info .section-eyebrow{ order: 1; }
+  .contact-info .section-title{ order: 2; }
+  .contact-info .section-lead{ order: 3; }
+  .contact-status{ order: 4; }
+  .contact-form{ order: 5; }
+  .contact-links{ order: 6; margin-top: 0; }
+}

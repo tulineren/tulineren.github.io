@@ -533,7 +533,7 @@ html[data-theme="light"] .hero-ring::after {
   text-align:center;
   font-family:var(--font-body);
   font-size:0.875rem;
-  font-weight:600;
+  font-weight:400;
   line-height:1.5;
   letter-spacing:0.045em;
   color:var(--text-muted);
@@ -1560,5 +1560,13 @@ a.contact-value:hover{
 @media (max-width: 860px){
   .hero-title-centered{
     letter-spacing: 0.07em !important;
+  }
+}
+
+@media (max-width: 860px){
+  .hero-interests-line{
+    max-width: 260px;
+    margin-left: auto;
+    margin-right: auto;
   }
 }

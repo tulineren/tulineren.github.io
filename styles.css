@@ -533,9 +533,9 @@ html[data-theme="light"] .hero-ring::after {
   text-align:center;
   font-family:var(--font-body);
   font-size:0.875rem;
-  font-weight:400;
+  font-weight:600;
   line-height:1.5;
-  letter-spacing:0.025em;
+  letter-spacing:0.045em;
   color:var(--text-muted);
   margin:0 0 30px;
 }

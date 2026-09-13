@@ -343,7 +343,7 @@ function renderRepos(lang) {
 }
 
 // =========================================================
-// Contact form — prevent use of owner's email
+// Contact form — prevent use of owner's email variations
 // =========================================================
 const contactForm = document.querySelector('.contact-form');
 
@@ -354,17 +354,27 @@ if (contactForm) {
     if (!emailInput) return;
 
     const email = emailInput.value.trim().toLowerCase();
+    const emailUsername = email.split('@')[0];
 
-    const ownerEmails = [
-      'tulineren@gmail.com',
-      'erentulin5@gmail.com'
+    // Tülin Eren adına ait / benzer kullanıcı adı kalıpları
+    const blockedPatterns = [
+      'tulineren',
+      'tulin.eren',
+      'tulin_eren',
+      'erentulin',
+      'eren.tulin',
+      'eren_tulin'
     ];
 
-    if (ownerEmails.includes(email)) {
+    const isBlocked = blockedPatterns.some(pattern =>
+      emailUsername.startsWith(pattern)
+    );
+
+    if (isBlocked) {
       e.preventDefault();
 
       alert(
-        'Bu e-posta adresi site sahibi tarafından kullanılıyor. ' +
+        'Bu e-posta adresi site sahibi adına ait veya benzer bir kullanıcı adı içeriyor. ' +
         'Lütfen kendi e-posta adresinizi girin.'
       );
 

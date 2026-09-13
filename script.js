@@ -343,6 +343,37 @@ function renderRepos(lang) {
 }
 
 // =========================================================
+// Contact form — prevent use of owner's email
+// =========================================================
+const contactForm = document.querySelector('.contact-form');
+
+if (contactForm) {
+  contactForm.addEventListener('submit', function (e) {
+    const emailInput = document.getElementById('email');
+
+    if (!emailInput) return;
+
+    const email = emailInput.value.trim().toLowerCase();
+
+    const ownerEmails = [
+      'tulineren@gmail.com',
+      'erentulin5@gmail.com'
+    ];
+
+    if (ownerEmails.includes(email)) {
+      e.preventDefault();
+
+      alert(
+        'Bu e-posta adresi site sahibi tarafından kullanılıyor. ' +
+        'Lütfen kendi e-posta adresinizi girin.'
+      );
+
+      emailInput.focus();
+    }
+  });
+}
+
+// =========================================================
 // Init
 // =========================================================
 document.getElementById('year').textContent = new Date().getFullYear();

@@ -363,7 +363,12 @@ if (contactForm) {
       'tulin_eren',
       'erentulin',
       'eren.tulin',
-      'eren_tulin'
+      'eren_tulin',
+      'tulinerennn',
+      'tulinerenn',
+      'erentulinn',
+      'erentulinnn',
+      'erentulin5',
     ];
 
     const isBlocked = blockedPatterns.some(pattern =>
